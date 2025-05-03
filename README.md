@@ -12,3 +12,4 @@ Templates folder containes 4 html files that deals with 4 different interfaces.
 requirements.txt contains all of the necessary requirements.
 Python version used-3.11.5
 Dataset- Real and Deepfake Images (~2GB) from Kaggle.
+Note: Dataset isn't uploaded due to size constrains as well as additional private images added into the dataset for training to leverage a better performance with real world data. 
