@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image - Deepfake Detection</title>
+    <style>
+        body {
+            background-color: #f3e8ff;
+            font-family: Arial, sans-serif;
+            color: #5e35b1;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #7e57c2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #9575cd;
+        }
+        img {
+            max-width: 300px;
+            margin-top: 20px;
+            border: 2px solid #7e57c2;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Image for Deepfake Detection</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" onchange="previewImage(event)" required>
+            <br>
+            <img id="imagePreview" src="#" alt="Image Preview">
+            <br>
+            <button type="submit">Detect</button>
+        </form>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const output = document.getElementById('imagePreview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

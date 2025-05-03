@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+    <style>
+        body {
+            background-color: #f3e8ff;
+            font-family: Arial, sans-serif;
+            color: #5e35b1;
+            text-align: center;
+            padding: 50px;
+        }
+        .result-box {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 400px;
+            border: 2px solid #7e57c2;
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #7e57c2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        a:hover {
+            background-color: #9575cd;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Prediction: {{ label }} ({{ confidence }}%)</h2>
+        <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
+        <br>
+        <a href="{{ url_for('upload') }}">Try Another Image</a>
+    </div>
+</body>
+</html>

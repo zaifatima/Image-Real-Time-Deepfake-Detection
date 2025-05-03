@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-time Deepfake Detection</title>
+    <style>
+        body {
+            background-color: #f3e8ff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #5e35b1;
+            margin-top: 30px;
+        }
+        .video-container {
+            margin-top: 30px;
+        }
+        img {
+            border: 5px solid #7e57c2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-time Deepfake Detection</h1>
+    <div class="video-container">
+        <img src="{{ url_for('video') }}" width="720" />
+    </div>
+</body>
+</html>

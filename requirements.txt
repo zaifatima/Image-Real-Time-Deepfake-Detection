@@ -1,0 +1,10 @@
+flask
+opencv-python
+torch
+torchvision
+facenet-pytorch
+tensorflow
+keras
+numpy
+Pillow
+werkzeug
