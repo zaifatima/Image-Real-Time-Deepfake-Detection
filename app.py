@@ -11,6 +11,9 @@ from keras.models import model_from_json
 from keras.preprocessing import image
 from torchvision import models, transforms
 from werkzeug.utils import secure_filename
+import streamlit as st
+
+st.title("Real-Time Deepfake Detection")
 
 # Flask app config
 app = Flask(__name__)
